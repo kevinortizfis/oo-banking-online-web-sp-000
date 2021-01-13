@@ -25,15 +25,7 @@ class Transfer
       "Transaction rejected. Please check your account balance."
     end
 
-    if balance <= amount
-      "Transaction rejected. Please check your account balance."
-      @status = "rejected"
-    end
-    if (sender.balance >= amount) && @status == "pending"
-      sender.balance -= amount
-      receiver.deposit(amount)
-      @status = "complete"
-    end
+  
   end
 
   def reverse_transfer
